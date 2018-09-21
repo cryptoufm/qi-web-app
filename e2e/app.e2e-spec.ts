@@ -9,6 +9,6 @@ describe('angular-truffle-box App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getHeader()).toContain('Angular Truffle Box');
+    expect(page.getHeader()).toContain('Q\'i\'');
   });
 });

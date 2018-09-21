@@ -1,2 +1,4 @@
-# Q-i-
-Blockchain Developers Hackaton project
+### Q'i'
+
+## Academic Registry, redesigned. 
+
