@@ -16,7 +16,22 @@
       "es2017",
       "dom"
     ],
-    "module": "es2015",
-    "baseUrl": "./"
+    "paths": {
+      "@abi/*": [
+        "assets/contracts/*"
+      ],
+      "@service/*": [
+        "app/@service/*"
+      ],
+      "@pipe/*": [
+        "app/@pipe/*"
+      ],
+      "@factory/*": [
+        "app/@factory/*"
+      ],
+      "@contract/*": [
+        "app/@contract/*"
+      ]
+    }
   }
 }
