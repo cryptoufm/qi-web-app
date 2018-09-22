@@ -1,3 +1,4 @@
+declare var require: any
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 var ethers = require('ethers');
