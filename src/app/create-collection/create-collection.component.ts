@@ -18,7 +18,7 @@ export class CreateCollectionComponent implements OnInit {
   colAlias: string;
   colTitle:string;
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private router: Router) {
 
     web3.eth.accounts.wallet.add(this.privateKey);
 
@@ -49,6 +49,8 @@ export class CreateCollectionComponent implements OnInit {
 
   create() {
     this.createCollection(this.address, this.colTitle, this.colAlias);
+    this.router.navigate(['../index-collection']);
+
   }
 
   ngOnInit() {
