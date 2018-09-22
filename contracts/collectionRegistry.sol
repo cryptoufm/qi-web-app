@@ -2,7 +2,7 @@ pragma solidity ^0.4.17;
 
 import './Collection.sol';
 
-contract ownerRegistry {
+contract collectionRegistry {
 
   // Mapping between wallets and collections
   mapping (address => address[]) public collections;
