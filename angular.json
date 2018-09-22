@@ -74,6 +74,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
+              {
+                "input": "src/custom-theme.scss"
+              },
               "src/styles.css"
             ],
             "assets": [
