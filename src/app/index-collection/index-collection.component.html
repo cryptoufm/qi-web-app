@@ -47,8 +47,10 @@
           <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="start">
             <div fxFlex="75%">
               <span class="collectionTitle">
-                Developer Collection
-                </span> <br><br>
+
+                <span *ngFor="let col of collections">{{col}}</span>
+
+            </span> <br><br>
             </div>
           </div>
         </div>
