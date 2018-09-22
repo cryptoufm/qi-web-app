@@ -16,7 +16,7 @@ export class AccountService {
   var ownerContract = web3.eth.contract('Contract ABI');
 
   var owner = ownerContract.at('PASTE CONTRACT ADDRESS HERE');
-  console.log(Coursetro);
+  console.log(owner);
 
 
   constructor() { }
