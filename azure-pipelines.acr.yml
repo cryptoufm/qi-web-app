@@ -1,5 +1,4 @@
 # Build Docker image for this app using Azure Pipelines
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker?view=vsts
 pool:
   vmImage: 'Ubuntu 16.04'
 
