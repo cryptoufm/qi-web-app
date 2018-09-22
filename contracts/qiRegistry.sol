@@ -5,7 +5,7 @@ import './Qi';
 contract qiRegistry {
 
   // Mapping between profile and Q'i's it created
-  mapping (address => address[]) public emitters;
+  mapping (address => address[]) public issuers;
 
   // Mapping between profile and Q'i's it owns
   mapping (address => address[]) public receivers;
@@ -34,11 +34,11 @@ contract qiRegistry {
     q.newEmissionDate(receiverAddress);
   }
 
-  function getEmitterQis(address emitterAddress) {
+  function getEmitterQis(address emitterAddress) public view returns (address[]){
     return emitters[emitterAddress];
   }
 
-  function getReceiverQis(address receiverAddress) {
+  function getReceiverQis(address receiverAddress) public view returns (address[]) {
     return receivers[receiverAddress];
   }
 
