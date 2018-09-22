@@ -13,68 +13,38 @@
     <!-- CONTENT -->
     <mat-card class="content">
 
-      <!-- INFORMATION -->
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
-        <!-- LEFT SIDE PANEL -->
-        <div fxFlex="40%">
-
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
-
-            <div fxFlex="20%">
-              <span> Public key: </span>
+        <!-- ACCOUNT INFORMATION -->
+        <div fxFlex="50%" class="contentSpacing">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
+            <div fxFlex="75%">
+              <span class="disclaimer">
+                Public key: 0x10938029822980983
+              </span>
+              <br><br>
+              <span class="disclaimer">
+                Private key: 0x10938029822980984
+               </span>
             </div>
-
-            <div fxFlex="20%">
-                <form class="inputStd">
-                    <mat-form-field>
-                      <input matInput value="0x00000000000000000001">
-                    </mat-form-field>
-                  </form>
-            </div>
-
           </div>
-
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
-
-            <div fxFlex="20%">
-              <span> Private key: </span>
-            </div>
-
-            <div fxFlex="20%">
-                <form class="inputStd">
-                    <mat-form-field>
-                      <input matInput value="0x00000000000000000001">
-                    </mat-form-field>
-                  </form>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- RIGHT SIDE PANEL -->
-        <div fxFlex="40%">
-
-          <span> [el QR va acá] </span>
-
         </div>
 
       </div>
 
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="start">
 
-        <div fxFlex="30%">
-          <span> collecion 1 </span>
+        <!-- COLLECTIONS INDEX -->
+        <div fxFlex="10%">
         </div>
-
-      </div>
-
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
-
-        <div fxFlex="30%">
-          <span> collecion 2 </span>
+        <div fxFlex="100%" class="contentSpacing">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="start">
+            <div fxFlex="75%">
+              <span class="collectionTitle">
+                Developer Collection
+                </span> <br><br>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -82,14 +52,15 @@
 
 
       <!-- BUTTON -->
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="start">
 
-          <div fxFlex="20%">
-            <button  class="btn" mat-raised-button color="accent"> Create collection </button>
-          </div>
+        <div fxFlex="8%">
+        </div>
+        <div fxFlex="30%">
+          <button mat-flat-button color="accent" class="formButton"> Create Collection</button>
+        </div>
 
       </div>
-
 
     </mat-card>
 

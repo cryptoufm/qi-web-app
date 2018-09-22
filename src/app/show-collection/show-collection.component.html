@@ -2,7 +2,7 @@
 <div class="container">
 
     <!-- SEARCH BAR -->
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
       <div fxFlex="30%">
         <mat-form-field class="search-form">
@@ -15,109 +15,95 @@
         <button button="submit" mat-stroked-button color="accent">Log Out</button>
       </div>
 
-    </div>
+    </div> -->
 
+    <!-- TITLE -->
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
+
+      <div class="titleContainer">
+        <span class="title"> Collection </span>
+      </div>
+
+    </div>
 
     <!-- CONTENT -->
     <mat-card class="content">
 
-      <!-- INFORMATION -->
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
-        <!-- LEFT SIDE PANEL -->
-        <div fxFlex="30%">
-
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
-
-            <span> [Foto acá] </span>
-
+        <!-- DISCLAIMER PANEL -->
+        <div fxFlex="50%" class="contentSpacing">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
+            <div fxFlex="75%">
+              <span class="disclaimer">
+                Collection Alias: Jane Doe
+              </span>
+              <br><br>
+              <span class="disclaimer">
+                Contract Address: 0x29329009
+              </span>
+            </div>
           </div>
-
-        </div>
-
-         <!-- CENTER PANEL -->
-         <div fxFlex="30%">
-
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
-
-            <span> Jane Doe </span>
-
-          </div>
-
-        </div>
-
-        <!-- RIGHT SIDE PANEL -->
-        <div fxFlex="30%">
-
-          <button button="submit" mat-raised-button color="accent">Create Qi</button>
-
         </div>
 
       </div>
 
-      <br><br><br>
 
       <!-- TIMELINE -->
+
       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
-          <div fxFlex="10%">
-            <span> Junio 2018 | </span>
+        <div fxFlex="10%" class="checkpoint">
+          <span> Month 2018 </span>
+        </div>
+
+        <div fxFlex="70%">
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="qiTitle">
+                Qi Title
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <p> key: value </p>
+            <p> key: value </p>
+            <p> key: value </p>
+            <p> key: value </p>
+
+          </mat-expansion-panel>
+
+        </div>
+
+      </div>
+
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+
+          <div fxFlex="10%" class="checkpoint">
+            <span> Month 2018 </span>
           </div>
 
           <div fxFlex="70%">
 
             <mat-expansion-panel>
               <mat-expansion-panel-header>
-                <mat-panel-title>
-                  B.S. in Computer Science
+                <mat-panel-title class="qiTitle">
+                  Qi Title
                 </mat-panel-title>
-                <!-- <mat-panel-description>
-                  This is a summary of the content
-                </mat-panel-description> -->
               </mat-expansion-panel-header>
 
-              <p> atr1: algo1 </p>
-              <p> atr2: algo2 </p>
-              <p> atr3: algo3 </p>
-              <p> atr4: algo4 </p>
+              <p> key: value </p>
+              <p> key: value </p>
+              <p> key: value </p>
+              <p> key: value </p>
 
             </mat-expansion-panel>
 
           </div>
 
-      </div>
+        </div>
 
       <br>
-
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-
-          <div fxFlex="10%">
-            <span> Octubre 2015 | </span>
-          </div>
-
-          <div fxFlex="70%">
-
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Bachillerato Ciencias y letras Capouilliez
-                </mat-panel-title>
-                <!-- <mat-panel-description>
-                  This is a summary of the content
-                </mat-panel-description> -->
-              </mat-expansion-panel-header>
-
-              <p> atr1: algo1 </p>
-              <p> atr2: algo2 </p>
-              <p> atr3: algo3 </p>
-              <p> atr4: algo4 </p>
-
-            </mat-expansion-panel>
-
-          </div>
-
-      </div>
-
 
     </mat-card>
 

@@ -13,54 +13,46 @@
     <!-- CONTENT -->
     <mat-card class="content">
 
-      <!-- INFORMATION -->
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
-        <!-- LEFT SIDE PANEL -->
-        <div fxFlex="40%">
+        <!-- FORM PANEL -->
+        <div fxFlex="50%" class="contentSpacing">
 
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
-
-            <div fxFlex="100%">
-              <span> seed phrase: </span>
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
+            <div fxFlex="65%">
+                <form class="form">
+                  <mat-form-field color="accent" class="input-full-width">
+                    <input matInput placeholder="Seed Phrase" value="0x1289130809098098">
+                  </mat-form-field>
+                </form>
             </div>
-
-          </div>
-
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start">
-
-            <div fxFlex="20%">
-                <form class="inputStd">
-                    <mat-form-field>
-                      <input matInput value="unas palabras bien vergas que estan culeras y no sirven">
-                    </mat-form-field>
-                  </form>
-            </div>
-
           </div>
 
         </div>
 
-
-        <!-- RIGHT SIDE PANEL -->
-        <div fxFlex="40%">
-
-          <span> Lorem ipsum dadkjh lknk nkl mjkbn klnkjbn jkn </span>
-
+        <!-- DISCLAIMER PANEL -->
+        <div fxFlex="50%" class="contentSpacing">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
+            <div fxFlex="75%">
+              <span class="disclaimer">
+                 To access your ETH account, please enter the seed phrase you saved while creating your account.
+                <br>
+                We will not save this private information anywhere. We strongly believe our information should be yours and only yours.
+              </span>
+            </div>
+          </div>
         </div>
 
       </div>
-
 
       <!-- BUTTON -->
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
-          <div fxFlex="20%">
-            <button  class="btn" mat-raised-button color="accent" (click)="move()"> Continue </button>
-          </div>
+        <div fxFlex="30%">
+          <button mat-flat-button color="accent" class="formButton"> Continue </button>
+        </div>
 
       </div>
-
 
     </mat-card>
 
