@@ -27,6 +27,7 @@
     "@angular/platform-server": "6.1.7",
     "@angular/router": "6.1.7",
     "core-js": "^2.5.4",
+    "ethers": "^3.0.29",
     "rxjs": "^6.3.2",
     "web3": "^1.0.0-beta.36",
     "zone.js": "^0.8.26"

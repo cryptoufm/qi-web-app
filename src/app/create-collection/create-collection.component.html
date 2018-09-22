@@ -22,7 +22,7 @@
             <div fxFlex="65%">
                 <form class="form">
                   <mat-form-field color="accent" class="input-full-width">
-                    <input matInput placeholder="Collection Alias" value="Jane Doe">
+                    <input matInput placeholder="Collection Alias" [(ngModel)]="colAlias" [ngModelOptions]="{standalone: true}">
                   </mat-form-field>
                 </form>
             </div>
@@ -32,7 +32,7 @@
             <div fxFlex="65%">
                 <form class="form">
                   <mat-form-field color="accent" class="input-full-width">
-                    <input matInput placeholder="Collection Name" value="Developer col.">
+                    <input matInput placeholder="Collection Name" [(ngModel)]="colTitle" [ngModelOptions]="{standalone: true}">
                   </mat-form-field>
                 </form>
             </div>
@@ -45,7 +45,11 @@
           <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
             <div fxFlex="75%">
               <span class="disclaimer">
-                Disclaimer...
+                When you click deploy, you will be creating a contract (address: 0x....).
+                <br>
+                The transaction fee will be around x.x ETH. By clicking, you will be spending a part of your assets.
+                <br>
+                How do you want to organize your merits? Based on their field, on a nickname or alter ego, on an organization or subgroup... you choose.
               </span>
             </div>
           </div>
@@ -57,7 +61,7 @@
       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
         <div fxFlex="30%">
-          <button mat-flat-button color="accent" class="formButton"> Deploy </button>
+          <button mat-flat-button color="accent" class="formButton" (click)="create()"> Deploy </button>
         </div>
 
       </div>

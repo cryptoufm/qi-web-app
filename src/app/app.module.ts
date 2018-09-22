@@ -88,6 +88,7 @@ import { UpdateQiComponent } from './update-qi/update-qi.component';
         component: CreateCollectionComponent
       },
       {
+        // path: 'index-collection/:wallet',
         path: 'index-collection',
         component: IndexCollectionComponent
       },

@@ -22,7 +22,7 @@
             <div fxFlex="65%">
                 <form class="form">
                   <mat-form-field color="accent" class="input-full-width">
-                    <input matInput placeholder="Seed Phrase" value="0x1289130809098098">
+                    <input matInput placeholder="Seed Phrase" [(ngModel)]="seedPhrase" [ngModelOptions]="{standalone: true}">
                   </mat-form-field>
                 </form>
             </div>
@@ -49,7 +49,7 @@
       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
         <div fxFlex="30%">
-          <button mat-flat-button color="accent" class="formButton"> Continue </button>
+          <button mat-flat-button color="accent" class="formButton" (click)="login()"> Continue </button>
         </div>
 
       </div>

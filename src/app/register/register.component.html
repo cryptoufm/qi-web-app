@@ -22,7 +22,7 @@
           <div fxFlex="65%">
               <form class="form">
                 <mat-form-field color="accent" class="input-full-width">
-                  <input matInput placeholder="ETH Public Key (address)" value="0x1289130809098098">
+                  <input matInput placeholder="ETH Public Key (address)" [(ngModel)]="address" [ngModelOptions]="{standalone: true}">
                 </mat-form-field>
               </form>
           </div>
@@ -32,7 +32,7 @@
           <div fxFlex="65%">
               <form class="form">
                 <mat-form-field color="accent" class="input-full-width">
-                  <input matInput placeholder="Seed Phrase" value="a b c d e f g h i j">
+                  <input matInput placeholder="Seed Phrase" [(ngModel)]="mnemonic" [ngModelOptions]="{standalone: true}">
                 </mat-form-field>
               </form>
           </div>
@@ -42,7 +42,7 @@
           <div fxFlex="65%">
               <form class="form">
                 <mat-form-field color="accent" class="input-full-width">
-                  <input matInput placeholder="ETH Private Key" value="0x1289130809098098">
+                  <input matInput placeholder="ETH Private Key" [(ngModel)]="privateKey" [ngModelOptions]="{standalone: true}">
                 </mat-form-field>
               </form>
           </div>
@@ -55,7 +55,9 @@
         <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
           <div fxFlex="75%">
             <span class="disclaimer">
-               Lorem ipsum dadkjh lknk nkl mjkbn klnkjbn jkn ipsum dadkjh lknk nkl mjkbn klnkjbn jknipsum dadkjh lknk nkl mjkbn klnkjbn jknipsum dadkjh lknk nkl mjkbn klnkjbn jkn
+              These are your wallet credentials, please save them in a safe place.
+              <br>
+              If you loose them, you will not be able to recover them again and you will loose all access to your assets.
             </span>
           </div>
         </div>
@@ -67,7 +69,7 @@
     <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
       <div fxFlex="30%">
-        <button mat-flat-button color="accent" class="formButton"> Register</button>
+        <button mat-flat-button color="accent" class="formButton" (click)="register()"> Register</button>
       </div>
 
     </div>
