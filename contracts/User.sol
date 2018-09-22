@@ -1,21 +1,20 @@
 pragma solidity ^0.4.17;
 
-//User contract for profile creation and obtent
+// App user, class definition.
 contract User {
+	address public walletOwner = msg.sender;
+	uint public userTimestamp = block.timestamp;
 	
-	address[] public profiles;
-	mapping (address=>address[]) public profileByAddress; 
-	address private walletOwner;
 	string public userName;
 	string public birthday;
-	uint private userTimestamp;
-	
+	address[] public profiles;
+	mapping (address=>address[]) public profileByAddress;
 	
 	constructor (string name, string bday) public {
-	    walletOwner=msg.sender;
-	    userName=name;
-	    birthday=bday;
-	    userTimestamp=block.timestamp;
+	    userName = name;
+	    birthday = bday;
+	    walletOwner;
+	    userTimestamp;
 	}
 
 	function getProfiles() public view returns (address[]){
@@ -29,4 +28,10 @@ contract User {
 	function setProfile(address profile) public {
 	    profiles.push(profile);
 	}
+	
+	function kill() public { //self-destruct function, 
+	    if(msg.sender == walletOwner) {
+            selfdestruct(walletOwner); 
+        }
+    }
 }
