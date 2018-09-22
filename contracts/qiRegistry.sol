@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-import './Qi'
+import './Qi';
 
 contract qiRegistry {
 
@@ -10,35 +10,36 @@ contract qiRegistry {
   // Mapping between profile and Q'i's it owns
   mapping (address => address[]) public receivers;
 
-  function validation(address qiAddress) private{
+  function validate(address qiAddress) private {
     // Function for accessing Qi contract and verifying owner
     Qi q = Qi(qiAddress);
 		require(msg.sender == q.getOwner());
-    return true
+    return true;
   }
 
-  function setEmmiter(address qiAddress) public{
-    // Validate that the message sender equals the Q'i' owner
-    require(validation(qiAddress));
+  function registerEmmiter(address qiAddress) public {
+
+    require(validate(qiAddress));
     // Maps the Qi address to the Qi creator
     emitters[msg.sender].push(qiAddress);
   }
 
-  function setReceiver(address qiAddress, address receiverAddress) public{
-    // Validate that the message sender equals the Q'i' owner
-    require(validation(qiAddress));
-    // Maps Qi address to the receiver's Qi list
+  function registerReceiver(address qiAddress, address receiverAddress) public {
+
+    require(validate(qiAddress));
+    // Maps Qi address to the receiver's Q'i' list
+    // Sets the date in which the Q'i' was emmited
     receivers[receiverAddress].push(qiAddress);
+    Qi q = Qi(qiAddress);
+    q.newEmissionDate(receiverAddress);
   }
 
-  // Returns array of emitter Q'i's
-  function getEmitterQis(address emitterAddress){
-    return emitters[emitterAddress]
+  function getEmitterQis(address emitterAddress) {
+    return emitters[emitterAddress];
   }
 
-  // Returns array of receiver Q'i's
-  function getReceiverQis(address receiverAddress){
-    return receivers[receiverAddress]
+  function getReceiverQis(address receiverAddress) {
+    return receivers[receiverAddress];
   }
 
 }
