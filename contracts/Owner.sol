@@ -16,6 +16,10 @@ contract Owner {
 		return collections;
 	}
 
+	function getOwner() public view returns (address) {
+			return walletOwner;
+	}
+
 	function addCollection(address collection) public {
 	    require(msg.sender == walletOwner);
 	    collections.push(collection);
