@@ -22,7 +22,15 @@
             <div fxFlex="65%">
                 <form class="form">
                   <mat-form-field color="accent" class="input-full-width">
-                    <input matInput placeholder="Seed Phrase" [(ngModel)]="seedPhrase" [ngModelOptions]="{standalone: true}">
+                    <textarea matInput
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="2"
+                    placeholder="Seed Phrase"
+                    [(ngModel)]="mnemonic"
+                    [ngModelOptions]="{standalone: true}">
+                    </textarea>
                   </mat-form-field>
                 </form>
             </div>

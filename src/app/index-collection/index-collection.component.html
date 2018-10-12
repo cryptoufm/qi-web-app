@@ -16,22 +16,23 @@
       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
 
         <!-- ACCOUNT INFORMATION -->
-        <div fxFlex="50%" class="contentSpacing">
+        <div fxFlex="70%" class="contentSpacing">
           <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
-            <div fxFlex="75%">
+            <div fxFlex="50%">
+              <span class="disclaimer">
+              Balance:
+              </span> <br>
+              <span class="disclaimer">
+                3.99
+              </span>
+            </div>
+            <div fxFlex="50%">
               <span class="disclaimer">
                 Public key:
               </span> <br>
               <span class="disclaimer">
                 {{address}}
               </span>
-              <br><br>
-              <span class="disclaimer">
-                Private key:
-               </span> <br>
-               <span class="disclaimer">
-                  {{privateKey}}
-                </span>
             </div>
           </div>
         </div>
@@ -48,7 +49,7 @@
             <div fxFlex="75%">
               <span class="collectionTitle">
 
-                <span *ngFor="let col of collections">{{col}}</span>
+                <span>hola </span>
 
             </span> <br><br>
             </div>
@@ -65,7 +66,7 @@
         <div fxFlex="8%">
         </div>
         <div fxFlex="30%">
-          <button mat-flat-button color="accent" class="formButton" (click)="createCollection()"> Create Collection</button>
+          <button mat-flat-button color="accent" class="formButton" (click)="createCollection()">Create Collection</button>
         </div>
 
       </div>

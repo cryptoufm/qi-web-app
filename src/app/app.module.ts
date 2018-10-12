@@ -76,24 +76,23 @@ import { UpdateQiComponent } from './update-qi/update-qi.component';
         component: LoginComponent
       },
       {
-        path: 'create-qi',
+        path: 'create-qi/:mnemonic',
         component: CreateQiComponent
       },
       {
-        path: 'update-qi',
+        path: 'update-qi/:mnemonic/:qiAddress',
         component: UpdateQiComponent
       },
       {
-        path: 'create-collection',
+        path: 'create-collection/:mnemonic',
         component: CreateCollectionComponent
       },
       {
-        // path: 'index-collection/:wallet',
-        path: 'index-collection',
+        path: 'index-collection/:walletAddress',
         component: IndexCollectionComponent
       },
       {
-        path: 'show-collection',
+        path: 'show-collection/:collectionAddress',
         component: ShowCollectionComponent
       },
       {

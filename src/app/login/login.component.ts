@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 var ethers = require('ethers');
 
 @Component({
@@ -7,28 +7,30 @@ var ethers = require('ethers');
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
-  seedPhrase: string = "bicycle picnic flight way parade husband guide leader ghost party gauge lounge";
-  wallet: object;
+  wallet: any;
   address: string;
   mnemonic: string;
   privateKey: string;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
-
-    let wallet = ethers.Wallet.fromMnemonic(this.seedPhrase);
-    this.address = wallet.address;
-    this.privateKey = wallet.privateKey;
-
-  }
-
-  login(){
-    // alert(this.privateKey);
-    this.router.navigate(['../index-collection']);
+  constructor(
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
   }
 
+  login(){
+    this.wallet = ethers.Wallet.fromMnemonic(this.mnemonic);
+    console.log('Wallet retrieved: ', this.wallet);
+    this.address = this.wallet.address;
+    this.privateKey = this.wallet.privateKey;
+    console.log('Sending as param: ', this.privateKey);
+    this.router.navigate(['../index-collection', this.mnemonic]);
+  }
+
 }
+

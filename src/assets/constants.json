@@ -1,5 +1,5 @@
 {
-  "collectionRegistry": "0x3CFC2b1246f52B1c18939b417e8181b20F7dd404",
-  "qiRegistry": "0x248000A7001Be09565efe0210CBAbB16dC3F5DED",
-  "network": "https://rinkeby.infura.io/v3/b48aeb09bb684b1eb6a6d81261b6d42c"
+  "collectionRegistry": "0x65276d8D097d89661C42d6541DFe38A62F464d4F",
+  "qiRegistry": "0x6eccc3799498533461FF8a2389D08338adcA7B13",
+  "network": "https://ropsten.infura.io/v3/36be49cdff8d4cd1bb8b49f933706328"
 }

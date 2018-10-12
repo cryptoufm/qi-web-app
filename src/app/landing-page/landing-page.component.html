@@ -3,12 +3,11 @@
   <div class="containerr" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="end">
 
     <div fxFlex="12%">
-      <button  routerLink="/login" class="btn" mat-button color="accent"> Log In </button>
+      <button class="btn" mat-button color="accent" (click)="navigate('login')"> Log In </button>
     </div>
 
     <div fxFlex="12%">
-      <!-- <a routerLink="/register"> Registerrrrr </a> -->
-      <button routerLink="/register" class="btn" mat-stroked-button color="accent"> Register </button>
+      <button class="btn" mat-stroked-button color="accent" (click)="navigate('register')"> Register </button>
     </div>
 
   </div>
@@ -75,27 +74,3 @@
   </div>
 
 </div>
-
-<!-- <mat-toolbar
-<!-- <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div> -->
-
-<!-- <mat-form-field class="search-form">
-  <input matInput placeholder="Search Picture" type="text">
-</mat-form-field>
-<button button="submit" mat-raised-button color="accent">Search</button>
-<br> -->
-<!--
-<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-  <mat-card class="card-picture" *ngFor="let picture of pictures">
-    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-      <span fxFlex="80%">{{picture.title}}</span>
-      <mat-icon fxFlex="10%">mode_edit</mat-icon>
-      <mat-icon fxFlex="10%">delete</mat-icon>
-    </mat-card-title>
-    <img mat-card-image [src]="picture.img">
-  </mat-card>
-</div> -->

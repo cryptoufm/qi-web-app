@@ -22,7 +22,16 @@
           <div fxFlex="65%">
               <form class="form">
                 <mat-form-field color="accent" class="input-full-width">
-                  <input matInput placeholder="ETH Public Key (address)" [(ngModel)]="address" [ngModelOptions]="{standalone: true}">
+                  <textarea matInput
+                  disabled
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="2"
+                  placeholder="ETH Public Key (address)"
+                  [(ngModel)]="address"
+                  [ngModelOptions]="{standalone: true}">
+                  </textarea>
                 </mat-form-field>
               </form>
           </div>
@@ -32,7 +41,16 @@
           <div fxFlex="65%">
               <form class="form">
                 <mat-form-field color="accent" class="input-full-width">
-                  <input matInput placeholder="Seed Phrase" [(ngModel)]="mnemonic" [ngModelOptions]="{standalone: true}">
+                  <textarea matInput
+                  disabled
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="2"
+                  placeholder="Seed Phrase"
+                  [(ngModel)]="mnemonic"
+                  [ngModelOptions]="{standalone: true}">
+                  </textarea>
                 </mat-form-field>
               </form>
           </div>
@@ -42,7 +60,16 @@
           <div fxFlex="65%">
               <form class="form">
                 <mat-form-field color="accent" class="input-full-width">
-                  <input matInput placeholder="ETH Private Key" [(ngModel)]="privateKey" [ngModelOptions]="{standalone: true}">
+                  <textarea matInput
+                  disabled
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="2"
+                  placeholder="ETH Private Key"
+                  [(ngModel)]="privateKey"
+                  [ngModelOptions]="{standalone: true}">
+                  </textarea>
                 </mat-form-field>
               </form>
           </div>

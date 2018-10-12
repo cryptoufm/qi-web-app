@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 var ethers = require('ethers');
 var Web3 = require('web3');
@@ -6,25 +6,42 @@ import constants from '../../assets/constants.json';
 import colRegistry from '../../assets/contracts/collectionRegistry.json';
 let web3 = new Web3(new Web3.providers.HttpProvider(constants.network));
 
-
-
 @Component({
   selector: 'app-index-collection',
   templateUrl: './index-collection.component.html',
   styleUrls: ['./index-collection.component.css']
 })
+
 export class IndexCollectionComponent implements OnInit {
 
   public params;
+  private sub: any;
 
-  wallet: object;
-  address: string = '0x3976C4b30F13b0270e20279dFc12400126FB7299';
-  privateKey: string = '0x30CCF126CB71CEF1417D6DEA0C45A98A59B07E4E04B9161B5F9C37730C14EA64';
+  wallet: any;
+  address: string;
+  privateKey: string;
   collections: any;
+  mnemonic: string;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    // web3.eth.accounts.wallet.add(this.privateKey);
+  }
 
-    web3.eth.accounts.wallet.add(this.privateKey);
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      this.mnemonic = params['walletAddress'];
+      this.wallet = ethers.Wallet.fromMnemonic(this.mnemonic);
+      this.address = this.wallet.address;
+      this.privateKey = this.wallet.privateKey;
+      console.log(this.wallet);
+
+      web3.eth.accounts.wallet.add(this.privateKey);
+
+      this.getCollectionList(this.address);
+    });
 
   }
 
@@ -47,19 +64,12 @@ export class IndexCollectionComponent implements OnInit {
     })
   }
 
-
-
-  ngOnInit() {
-    let objeto = parseInt(this.route.snapshot.paramMap.get('wallet'));
-    this.params = objeto;
-    // console.log(this.params);
-    this.collections = this.getCollectionList(this.address);
-
-    // console.log(this.collections);
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   createCollection() {
-    this.router.navigate(['../create-collection']);
+    this.router.navigate(['../create-collection', this.mnemonic]);
   }
 
 }

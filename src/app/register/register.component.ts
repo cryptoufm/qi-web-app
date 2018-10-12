@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 var ethers = require('ethers');
 
 @Component({
@@ -7,29 +7,30 @@ var ethers = require('ethers');
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
 
-  seed: string;
-  wallet: object;
+  wallet: any;
   address: string;
   mnemonic: string;
   privateKey: string;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
-
-    let wallet = ethers.Wallet.createRandom();
-    this.address = wallet.address;
-    this.mnemonic = wallet.mnemonic;
-    this.privateKey = wallet.privateKey;
-
-  }
-
-  register() {
-    console.log(this.wallet);
-    this.router.navigate(['../index-collection'], this.wallet);
+  constructor(
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
+    this.wallet = ethers.Wallet.createRandom();
+    this.address = this.wallet.address;
+    this.mnemonic = this.wallet.mnemonic;
+    this.privateKey = this.wallet.privateKey;
+    console.log('Created wallet: ', this.wallet);
+  }
+
+  register() {
+    console.log('Sending as param: ', this.wallet);
+    this.router.navigate(['../index-collection', this.mnemonic]);
   }
 
 }
