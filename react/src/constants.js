@@ -1,0 +1,5 @@
+module.exports = {
+    AUTH_SET_TOKEN: 'SET_TOKEN',
+    AUTH_DISCARD_TOKEN: 'DISCARD_TOKEN',
+    AUTH_SET_USER: 'SET_USER'
+ };
