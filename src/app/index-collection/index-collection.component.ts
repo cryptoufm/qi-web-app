@@ -51,7 +51,7 @@ export class IndexCollectionComponent implements OnInit {
     // console.log(colRegistryAddr);
     // console.log(colRegistryAbi);
     // console.log(this.address);
-    var contract = new web3.eth.Contract(colRegistryAbi.abi, colRegistryAddr);
+    var contract = new web3.eth.Contract(colRegistryAbi, colRegistryAddr);
     contract.methods.getCollectionsByAddr(wallet).call({from: wallet}, function(error, result){
       if(!error){
         console.log('collections: ');

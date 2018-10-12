@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 var ethers = require('ethers');
 var Web3 = require('web3');
 import constants from '../../assets/constants.json';
-import colRegistry from '../../assets/contracts/collectionRegistry.json';
+import qiRegistry from '../../assets/contracts/qiRegistry.json';
 let web3 = new Web3(new Web3.providers.HttpProvider(constants.network));
 
 @Component({
@@ -44,8 +44,8 @@ export class CreateQiComponent implements OnInit {
   }
 
   createQi(wallet, collectionAddr, title, info){
-    var qiRegistryAddr = require('../../assets/constants.json');
-    var qiRegistryAbi = require('../../assets/contracts/qiRegistry.json');
+    var qiRegistryAddr = constants;
+    var qiRegistryAbi = qiRegistry;
     var contract = new web3.eth.Contract(qiRegistryAbi, qiRegistryAddr.qiRegistry);
     var transactionobj = contract.methods.createQi(collectionAddr, title, info);
     transactionobj.estimateGas()

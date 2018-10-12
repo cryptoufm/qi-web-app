@@ -43,8 +43,8 @@ export class CreateCollectionComponent implements OnInit {
   }
 
   createCollection(walletAddr, title, alias) {
-    var colRegistryAddr = require('../../assets/constants.json');
-    var colRegistryAbi = require('../../assets/contracts/collectionRegistry.json');
+    var colRegistryAddr = constants;
+    var colRegistryAbi = colRegistry;
     console.log(colRegistryAddr)
     var contractMethod = new web3.eth.Contract(colRegistryAbi, colRegistryAddr.collectionRegistry)
       .methods.create(title, alias);
