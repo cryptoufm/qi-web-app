@@ -1,3 +1,4 @@
+declare var require: any
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 var ethers = require('ethers');
@@ -56,6 +57,7 @@ export class IndexCollectionComponent implements OnInit {
       if(!error){
         console.log('collections: ');
         console.log(result);
+        this.collections = result;
         return result;
       }
       else {

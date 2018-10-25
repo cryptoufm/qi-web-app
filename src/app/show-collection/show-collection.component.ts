@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 var ethers = require('ethers');
 var Web3 = require('web3');
 import constants from '../../assets/constants.json';
-import colRegistry from '../../assets/contracts/collectionRegistry.json';
+import collectionAbi from '../../assets/contracts/Collection.json';
 let web3 = new Web3(new Web3.providers.HttpProvider(constants.network));
 
 @Component({
@@ -45,7 +45,7 @@ export class ShowCollectionComponent implements OnInit {
     });
   }
   getCollectionInfo(collectionAddr, wallet){
-    var Collection = require('./contracts/Collection.json');
+    var Collection = collectionAbi;
     var contract = new web3.eth.Contract(Collection.abi, collectionAddr);
     contract.methods.getCollectionInfo().call({from: wallet}, function(error, result){
       if(!error){

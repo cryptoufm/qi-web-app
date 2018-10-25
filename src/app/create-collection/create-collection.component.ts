@@ -35,7 +35,7 @@ export class CreateCollectionComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.mnemonic = params['mnemonic'];
       console.log(this.mnemonic);
-      this.wallet = ethers.Wallet.createRandom();
+      this.wallet = ethers.Wallet.fromMnemonic(this.mnemonic);
       this.address = this.wallet.address;
       this.privateKey = this.wallet.privateKey;
       web3.eth.accounts.wallet.add(this.privateKey);
@@ -45,7 +45,9 @@ export class CreateCollectionComponent implements OnInit {
   createCollection(walletAddr, title, alias) {
     var colRegistryAddr = constants;
     var colRegistryAbi = colRegistry;
-    console.log(colRegistryAddr)
+    console.log(colRegistryAddr.collectionRegistry)
+    console.log("walletaddr:",walletAddr)
+
     var contractMethod = new web3.eth.Contract(colRegistryAbi, colRegistryAddr.collectionRegistry)
       .methods.create(title, alias);
 
