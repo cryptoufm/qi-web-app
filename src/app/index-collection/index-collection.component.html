@@ -41,18 +41,39 @@
 
       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="start">
 
+
+      <ul>
+          <li *ngFor="let number of numberOptions">
+              {{number}}
+          </li>
+       </ul>
+
+       <!-- <ul>
+          <li *ngFor="let collection of algo">
+              {{collection}}
+          </li>
+       </ul> -->
+
+
         <!-- COLLECTIONS INDEX -->
         <div fxFlex="10%">
         </div>
         <div fxFlex="100%" class="contentSpacing">
           <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="start">
+
+
             <div fxFlex="75%">
-              <span class="collectionTitle">
+              <div class="collectionTitle" >
 
-                <span>{{collections}} </span>
+                <ul>
+                  <li *ngFor="let collection of collections" >
+                    {{collection}}
+                  </li>
+               </ul>
 
-            </span> <br><br>
+              </div> <br><br>
             </div>
+
           </div>
         </div>
 

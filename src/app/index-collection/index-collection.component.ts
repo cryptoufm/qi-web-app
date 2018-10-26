@@ -5,6 +5,7 @@ var ethers = require('ethers');
 var Web3 = require('web3');
 import constants from '../../assets/constants.json';
 import colRegistry from '../../assets/contracts/collectionRegistry.json';
+import collec from '../../assets/contracts/Collection.json';
 let web3 = new Web3(new Web3.providers.HttpProvider(constants.network));
 
 @Component({
@@ -23,12 +24,16 @@ export class IndexCollectionComponent implements OnInit {
   privateKey: string;
   collections: any;
   mnemonic: string;
+  numberOptions: any;
+  collectionArray: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router
   ) {
     // web3.eth.accounts.wallet.add(this.privateKey);
+
+
   }
 
   ngOnInit() {
@@ -37,27 +42,79 @@ export class IndexCollectionComponent implements OnInit {
       this.wallet = ethers.Wallet.fromMnemonic(this.mnemonic);
       this.address = this.wallet.address;
       this.privateKey = this.wallet.privateKey;
-      console.log(this.wallet);
-
       web3.eth.accounts.wallet.add(this.privateKey);
-
-      this.getCollectionList(this.address);
     });
+
+    this.collectionArray = this.getCollectionList(this.address);
+    const numberOptions= ["0x71d89ada80401626FeF99EeCEe422D72eb9c010A", "0x7A948c055eBA06f1787eD1bE428eCa17AB537002", "0x546F81b9c199249c876A9A718EC742222118f717"];
+    console.log(numberOptions);
+
+    // this.retrieve()
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   })
+
+    Promise.resolve([])
+      .then(x => funcs[0]().then(Array.prototype.concat.bind(x)))
+      .then(x => funcs[1]().then(Array.prototype.concat.bind(x)))
+      .then(x => funcs[2]().then(Array.prototype.concat.bind(x)))
+
 
   }
 
-  getCollectionList (wallet) {
+
+  // retrieve() {
+  //   let promise = new Promise((resolve, reject) => {
+  //     let data = this.numberOptions.map(col => {
+  //       this.getCollectionInfo(col, this.address);
+  //     });
+  //     if (data) {
+  //       resolve(data);
+  //     } else {
+  //       reject('Error');
+  //     }
+  //   });
+  //   return promise
+  // }
+
+
+
+
+  getProfiles() {
+    return new Promise(() => {
+      this.numberOptions.map(col => {
+        return this.getCollectionInfo(col, this.address);
+      });
+    })
+  }
+
+  async getFinalResult() {
+    await this.getProfiles();
+  }
+
+
+
+  getCollectionInfo(collectionAddr, address){
+    var Collection = constants.collection;
+    var contract = new web3.eth.Contract(collec, collectionAddr);
+    contract.methods.getCollectionInfo().call({from: address}, function(error, result){
+        console.log("Get Collection result: ", result)
+        this.finalArray.push(result);
+        return result;
+    });
+  }
+
+  getCollectionList (address) {
     var colRegistryAddr = constants.collectionRegistry;
     var colRegistryAbi = colRegistry;
-    // console.log(colRegistryAddr);
-    // console.log(colRegistryAbi);
-    // console.log(this.address);
     var contract = new web3.eth.Contract(colRegistryAbi, colRegistryAddr);
-    contract.methods.getCollectionsByAddr(wallet).call({from: wallet}, function(error, result){
+    contract.methods.getCollectionsByAddr(address).call({from: address}, function(error, result){
       if(!error){
-        console.log('collections: ');
-        console.log(result);
         this.collections = result;
+        console.log('collections: ', this.collections);
         return result;
       }
       else {
