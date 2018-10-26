@@ -57,12 +57,6 @@ export class IndexCollectionComponent implements OnInit {
     //     console.log(err);
     //   })
 
-    Promise.resolve([])
-      .then(x => funcs[0]().then(Array.prototype.concat.bind(x)))
-      .then(x => funcs[1]().then(Array.prototype.concat.bind(x)))
-      .then(x => funcs[2]().then(Array.prototype.concat.bind(x)))
-
-
   }
 
 
