@@ -33,7 +33,8 @@ export class ShowCollectionComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.mnemonic = params['walletAddress'];
+      this.collection = params['collectionAddress'];
+      this.mnemonic = params['mnemonic'];
       this.wallet = ethers.Wallet.fromMnemonic(this.mnemonic);
       this.address = this.wallet.address;
       this.privateKey = this.wallet.privateKey;
@@ -41,7 +42,7 @@ export class ShowCollectionComponent implements OnInit {
 
       web3.eth.accounts.wallet.add(this.privateKey);
 
-      this.getCollectionInfo(this.collection,this.address);
+      this.getCollectionInfo(this.collection, this.address);
     });
   }
   getCollectionInfo(collectionAddr, wallet){
