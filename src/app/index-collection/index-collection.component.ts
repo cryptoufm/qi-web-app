@@ -46,8 +46,8 @@ export class IndexCollectionComponent implements OnInit {
     });
 
     this.collectionArray = this.getCollectionList(this.address);
-    const numberOptions= ["0x71d89ada80401626FeF99EeCEe422D72eb9c010A", "0x7A948c055eBA06f1787eD1bE428eCa17AB537002", "0x546F81b9c199249c876A9A718EC742222118f717"];
-    console.log(numberOptions);
+    this.numberOptions= ["0x71d89ada80401626FeF99EeCEe422D72eb9c010A", "0x7A948c055eBA06f1787eD1bE428eCa17AB537002", "0x546F81b9c199249c876A9A718EC742222118f717"];
+    console.log(this.numberOptions);
 
     // this.retrieve()
     //   .then((data) => {
@@ -124,5 +124,13 @@ export class IndexCollectionComponent implements OnInit {
   createCollection() {
     this.router.navigate(['../create-collection', this.mnemonic]);
   }
+
+
+  goToCollection(collection) {
+    this.router.navigate(['../show-collection', collection, this.mnemonic]);
+  }
+
+
+
 
 }

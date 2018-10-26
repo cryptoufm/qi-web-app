@@ -92,7 +92,7 @@ import { UpdateQiComponent } from './update-qi/update-qi.component';
         component: IndexCollectionComponent
       },
       {
-        path: 'show-collection/:collectionAddress',
+        path: 'show-collection/:collectionAddress/:mnemonic',
         component: ShowCollectionComponent
       },
       {
